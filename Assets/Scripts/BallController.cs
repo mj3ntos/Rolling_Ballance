@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class BallController : MonoBehaviour
 {
-    public float speed = 1.2f;
+    public float speed = 1.5f;
 
     private Rigidbody rb;
 
