@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BallController : MonoBehaviour
 {
-    // public float speed = 1f;
+    public float speed = 1.8f;
 
     private Rigidbody rb;
 
@@ -20,6 +21,10 @@ public class BallController : MonoBehaviour
 
         Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
 
-        rb.AddForce(movement);
+        rb.AddForce(movement * speed);
+
+         if(transform.localPosition.y <-28){
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
     }
 }
